@@ -1,10 +1,17 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Mail, Phone, Linkedin } from "lucide-react";
+import { ExternalLink, Github, Mail, Phone, Linkedin, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Index = () => {
-  const skills = ["Python", "Java", "SQL", "HTML5", "CSS", "JavaScript", "TypeScript", "R", "AWS", "Azure", "Postman", "Git", "Docker", "Linux", "Orange Data Mining", "Flask", "Spring Boot", "PostgreSQL", "React"];
+  const skillCategories = {
+    languages: ["Python", "Java", "SQL", "HTML5", "CSS", "JavaScript", "TypeScript", "R"],
+    frameworks: ["Flask", "Spring Boot", "PostgreSQL", "React"],
+    tools: ["AWS", "Azure", "Postman", "Git", "Docker", "Linux", "Orange Data Mining"]
+  };
+
   const projects = [{
     title: "SudoGuru",
     description: "Full-stack Sudoku-solving and generating web application with Flask REST API and PostgreSQL backend. Capable of managing 1,000+ users with puzzle solve times under 0.1 seconds.",
@@ -18,8 +25,10 @@ const Index = () => {
     tech: ["React", "TypeScript", "Supabase", "MapBox"],
     liveUrl: "https://tipsytrail.uk",
     githubUrl: "#",
-    highlights: ["1,000+ UK pubs database", "Interactive mapping", "Automated data scraping"]
+    highlights: ["1,000+ UK pubs database", "Interactive mapping", "Automated data scraping"],
+    inDevelopment: true
   }];
+
   const workExperience = [{
     role: "Large Language Model (LLM) Trainer",
     company: "Outlier",
@@ -33,6 +42,7 @@ const Index = () => {
     location: "Telford",
     achievements: ["Served 200+ customers daily in fast-paced environment, sharpening communication and multitasking skills", "Collaborated with team to generate triple figure revenue daily during peak operations"]
   }];
+
   return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-50">
@@ -126,7 +136,15 @@ const Index = () => {
             {projects.map((project, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                      {project.inDevelopment && (
+                        <Badge variant="outline" className="text-xs bg-yellow-50 text-yellow-700 border-yellow-200">
+                          <AlertCircle className="w-3 h-3 mr-1" />
+                          In Development
+                        </Badge>
+                      )}
+                    </div>
                     <div className="flex gap-2">
                       <Button size="sm" variant="ghost" asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -164,11 +182,41 @@ const Index = () => {
       <section id="skills" className="py-20 px-6">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {skills.map((skill, index) => <Badge key={index} variant="outline" className="justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
-                  {skill}
-                </Badge>)}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Languages */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Programming Languages</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {skillCategories.languages.map((skill, index) => (
+                  <Badge key={index} variant="outline" className="justify-center py-2 border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 transition-colors cursor-default">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Frameworks */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Frameworks & Libraries</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {skillCategories.frameworks.map((skill, index) => (
+                  <Badge key={index} variant="outline" className="justify-center py-2 border-green-200 text-green-700 bg-green-50 hover:bg-green-100 transition-colors cursor-default">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Developer Tools */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Developer Tools</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {skillCategories.tools.map((skill, index) => (
+                  <Badge key={index} variant="outline" className="justify-center py-2 border-purple-200 text-purple-700 bg-purple-50 hover:bg-purple-100 transition-colors cursor-default">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -206,4 +254,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
