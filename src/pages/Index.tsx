@@ -1,61 +1,39 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Mail, Phone, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
-  const skills = [
-    "Python", "Java", "SQL", "HTML5", "CSS", "JavaScript", "TypeScript", "R",
-    "AWS", "Azure", "Postman", "Git", "Docker", "Linux", "Orange Data Mining",
-    "Flask", "Spring Boot", "PostgreSQL", "React"
-  ];
-
-  const projects = [
-    {
-      title: "SudoGuru",
-      description: "Full-stack Sudoku-solving and generating web application with Flask REST API and PostgreSQL backend. Capable of managing 1,000+ users with puzzle solve times under 0.1 seconds.",
-      tech: ["Flask", "PostgreSQL", "Dynamic HTML", "Tkinter"],
-      liveUrl: "https://sudoguru-priv.onrender.com/",
-      githubUrl: "https://github.com/kav-sw19/sudoku-solver-generator",
-      highlights: ["100% user success rate", "Sub 0.1s solve times", "1,000+ user capacity"]
-    },
-    {
-      title: "TipsyTrail",
-      description: "Location-based pub crawl web app enabling users to discover bars and generate pub routes using MapBox for interactive mapping and route visualization.",
-      tech: ["React", "TypeScript", "Supabase", "MapBox"],
-      liveUrl: "https://tipsytrail.uk",
-      githubUrl: "#",
-      highlights: ["1,000+ UK pubs database", "Interactive mapping", "Automated data scraping"]
-    }
-  ];
-
-  const workExperience = [
-    {
-      role: "Large Language Model (LLM) Trainer",
-      company: "Outlier",
-      period: "Nov 2024 -- Present",
-      location: "Remote",
-      achievements: [
-        "Trained Large Language Models by evaluating input/output and implementing improvements in Python and JavaScript",
-        "Reviewed 200+ model prompts, reducing hallucinations in coding outputs by 50% in successive training iterations"
-      ]
-    },
-    {
-      role: "Bartender",
-      company: "Buckatree Hall Hotel",
-      period: "Jun 2024 -- Sep 2024",
-      location: "Telford",
-      achievements: [
-        "Served 200+ customers daily in fast-paced environment, sharpening communication and multitasking skills",
-        "Collaborated with team to generate triple figure revenue daily during peak operations"
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const skills = ["Python", "Java", "SQL", "HTML5", "CSS", "JavaScript", "TypeScript", "R", "AWS", "Azure", "Postman", "Git", "Docker", "Linux", "Orange Data Mining", "Flask", "Spring Boot", "PostgreSQL", "React"];
+  const projects = [{
+    title: "SudoGuru",
+    description: "Full-stack Sudoku-solving and generating web application with Flask REST API and PostgreSQL backend. Capable of managing 1,000+ users with puzzle solve times under 0.1 seconds.",
+    tech: ["Flask", "PostgreSQL", "Dynamic HTML", "Tkinter"],
+    liveUrl: "https://sudoguru-priv.onrender.com/",
+    githubUrl: "https://github.com/kav-sw19/sudoku-solver-generator",
+    highlights: ["100% user success rate", "Sub 0.1s solve times", "1,000+ user capacity"]
+  }, {
+    title: "TipsyTrail",
+    description: "Location-based pub crawl web app enabling users to discover bars and generate pub routes using MapBox for interactive mapping and route visualization.",
+    tech: ["React", "TypeScript", "Supabase", "MapBox"],
+    liveUrl: "https://tipsytrail.uk",
+    githubUrl: "#",
+    highlights: ["1,000+ UK pubs database", "Interactive mapping", "Automated data scraping"]
+  }];
+  const workExperience = [{
+    role: "Large Language Model (LLM) Trainer",
+    company: "Outlier",
+    period: "Nov 2024 -- Present",
+    location: "Remote",
+    achievements: ["Trained Large Language Models by evaluating input/output and implementing improvements in Python and JavaScript", "Reviewed 200+ model prompts, reducing hallucinations in coding outputs by 50% in successive training iterations"]
+  }, {
+    role: "Bartender",
+    company: "Buckatree Hall Hotel",
+    period: "Jun 2024 -- Sep 2024",
+    location: "Telford",
+    achievements: ["Served 200+ customers daily in fast-paced environment, sharpening communication and multitasking skills", "Collaborated with team to generate triple figure revenue daily during peak operations"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-6 py-4">
@@ -78,10 +56,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Kavindu Walisinghe
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Computer Science Student & Software Developer specializing in Full-Stack Development, 
-            Machine Learning, and Cybersecurity
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">Computer Science Graduate</p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Badge variant="secondary" className="text-sm px-4 py-2">Software Development</Badge>
             <Badge variant="secondary" className="text-sm px-4 py-2">Machine Learning</Badge>
@@ -109,21 +84,7 @@ const Index = () => {
                 <CardTitle>Education</CardTitle>
                 <CardDescription>University of Leicester</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="font-semibold">Bachelor of Computer Science</h3>
-                    <p className="text-muted-foreground">Predicted Grade: First Class Honours</p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">Expected July 2025</span>
-                </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Currently pursuing a comprehensive Computer Science degree with focus on software engineering, 
-                  cybersecurity, and data analytics. Coursework includes Software Architecture, Mobile & Web Applications, 
-                  Internet & Cloud Computing, and Foundations of Cybersecurity.
-                </p>
-                <Badge variant="outline">Cisco Cybersecurity Certified</Badge>
-              </CardContent>
+              
             </Card>
           </div>
         </div>
@@ -134,8 +95,7 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
           <div className="max-w-4xl mx-auto space-y-8">
-            {workExperience.map((job, index) => (
-              <Card key={index}>
+            {workExperience.map((job, index) => <Card key={index}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
@@ -147,16 +107,13 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {job.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                    {job.achievements.map((achievement, idx) => <li key={idx} className="text-sm text-muted-foreground flex items-start">
                         <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         {achievement}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -166,8 +123,7 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {projects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
+            {projects.map((project, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
@@ -189,22 +145,17 @@ const Index = () => {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">{tech}</Badge>
-                      ))}
+                      {project.tech.map(tech => <Badge key={tech} variant="secondary" className="text-xs">{tech}</Badge>)}
                     </div>
                     <div className="space-y-1">
-                      {project.highlights.map((highlight, idx) => (
-                        <p key={idx} className="text-xs text-muted-foreground flex items-center">
+                      {project.highlights.map((highlight, idx) => <p key={idx} className="text-xs text-muted-foreground flex items-center">
                           <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                           {highlight}
-                        </p>
-                      ))}
+                        </p>)}
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -215,15 +166,9 @@ const Index = () => {
           <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {skills.map((skill, index) => (
-                <Badge 
-                  key={index} 
-                  variant="outline" 
-                  className="justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                >
+              {skills.map((skill, index) => <Badge key={index} variant="outline" className="justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
                   {skill}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
           </div>
         </div>
@@ -259,8 +204,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
