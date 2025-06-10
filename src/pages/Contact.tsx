@@ -53,10 +53,10 @@ const Contact = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              I'm always interested in new opportunities and collaborations. 
-              Feel free to reach out if you'd like to discuss a project or just say hello!
+              Ready to bring fresh ideas and technical expertise to your team? 
+              I'm actively seeking opportunities in software development and cybersecurity roles.
             </p>
           </div>
 
@@ -67,7 +67,7 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle>Contact Information</CardTitle>
                   <CardDescription>
-                    Prefer direct contact? Reach out through any of these channels.
+                    Interested in discussing opportunities? I'd love to hear from you.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -107,7 +107,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium">Location</p>
-                      <p className="text-muted-foreground">Leicestershire, UK</p>
+                      <p className="text-muted-foreground">Telford, UK</p>
                     </div>
                   </div>
                 </CardContent>
@@ -117,7 +117,7 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle>Professional Links</CardTitle>
                   <CardDescription>
-                    Connect with me on professional platforms.
+                    Connect with me to view my work and professional background.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -140,9 +140,9 @@ const Contact = () => {
             {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
+                <CardTitle>Get In Touch</CardTitle>
                 <CardDescription>
-                  Have a project in mind? I'd love to hear about it.
+                  Have an opportunity or want to learn more about my experience? Let's talk.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -167,7 +167,7 @@ const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="your.email@example.com"
+                        placeholder="your.email@company.com"
                         required
                       />
                     </div>
@@ -180,7 +180,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="What's this about?"
+                      placeholder="Job opportunity, collaboration, or general inquiry"
                       required
                     />
                   </div>
@@ -192,7 +192,7 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project or just say hello..."
+                      placeholder="Tell me about the role, your company, or what you'd like to discuss..."
                       rows={5}
                       required
                     />
@@ -212,7 +212,7 @@ const Contact = () => {
       <footer className="py-12 px-6 border-t border-border">
         <div className="container mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Kavindu Walisinghe. Built with React & TypeScript.
+            © 2025 Kavindu Walisinghe. Built with React & TypeScript.
           </p>
         </div>
       </footer>

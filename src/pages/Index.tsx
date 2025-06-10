@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -248,7 +247,7 @@ const Index = () => {
             </Button>
           </div>
           <p className="text-sm text-muted-foreground">
-            © 2024 Kavindu Walisinghe. Built with React & TypeScript.
+            © 2025 Kavindu Walisinghe. Built with React & TypeScript.
           </p>
         </div>
       </footer>
