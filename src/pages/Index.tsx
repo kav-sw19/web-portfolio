@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -41,6 +42,21 @@ const Index = () => {
     location: "Telford",
     achievements: ["Served 200+ customers daily in fast-paced environment, sharpening communication and multitasking skills", "Collaborated with team to generate triple figure revenue daily during peak operations"]
   }];
+
+  const universityModules = [
+    "Operating Systems and Networking",
+    "Databases and Domain Modelling", 
+    "User Interface Design and Evaluation",
+    "Data Analytics",
+    "Software Architecture and System Development",
+    "Software Engineering Group Project",
+    "Computers, Society and Professionalism",
+    "Mobile and Web Applications",
+    "Internet and Cloud Computing",
+    "Foundations of Cybersecurity",
+    "Big Data and Predictive Analytics",
+    "Computer Science Project and Dissertation"
+  ];
 
   return <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -87,13 +103,74 @@ const Index = () => {
       <section id="about" className="py-20 px-6 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* University Education */}
             <Card>
               <CardHeader>
-                <CardTitle>Education</CardTitle>
-                <CardDescription>University of Leicester</CardDescription>
+                <CardTitle>University of Leicester</CardTitle>
+                <CardDescription>Bachelor of Computer Science • Expected Graduation: July 2025</CardDescription>
               </CardHeader>
-              
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                      Predicted: First Class Honours
+                    </Badge>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-3">Key Modules (Penultimate & Final Year):</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {universityModules.map((module, index) => (
+                        <div key={index} className="flex items-center text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></span>
+                          {module}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Sixth Form Education */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Madeley Academy</CardTitle>
+                <CardDescription>A-Levels • September 2020 - June 2022</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-3">A-Level Subjects:</h4>
+                    <div className="flex flex-wrap gap-3">
+                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                        Computer Science
+                      </Badge>
+                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                        Mathematics
+                      </Badge>
+                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                        Physics
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Certifications */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Certifications</CardTitle>
+                <CardDescription>Professional development and skill validation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2">
+                  <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
+                    Introduction to Cybersecurity (Cisco)
+                  </Badge>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </div>
